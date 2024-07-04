@@ -17,6 +17,6 @@ int main() {
     for (int i = 1; i < r; i++) {
         result = lcm(result, numbers[i]);
     }
-    printf("Наименьшее общее кратное: %d\n", result);
+    printf("Найменше загальне кратне: %d\n", result);
     return 0;
 }
