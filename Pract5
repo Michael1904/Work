@@ -19,19 +19,3 @@ int count_sequences(int n) {
 
     return (a[n] + b[n] + c[n]) % MOD;
 }
-
-int main() {
-    int n;
-    printf("Введіть число n: ");
-    scanf("%d", &n);
-    
-    if (n <= 1 || n >= 10000) {
-        printf("Число повинно бути в діапазоні від 2 до 9999.\n");
-        return 1;
-    }
-    
-    int result = count_sequences(n);
-    printf("Кількість шуканих послідовностей: %d\n", result);
-    
-    return 0;
-}
