@@ -1,0 +1,27 @@
+#include <stdio.h>
+int count_numbers(int p) {
+    if (p == 1)
+        return 2; 
+    if (p == 2)
+        return 4; 
+    int dp[p+1];
+    dp[1] = 2; 
+    dp[2] = 4; 
+
+    for (int i = 3; i <= p; i++) {
+        dp[i] = dp[i-1] + dp[i-2];
+    }
+    return dp[p];
+}
+int main() {
+    int p;
+    printf("Введіть кількість цифр (p <= 30): ");
+    scanf("%d", &p);
+
+    if (p > 30) {
+        printf("Помилка! Кількість цифр перевищує 30.\n");
+        return 0;
+    }
+    printf("%d\n", count_numbers(p));
+    return 0;
+}
