@@ -13,10 +13,10 @@ double time_to_eat_cake(int t1, int t2, int t3) {
 
 int main() {
     int t1, t2, t3;
-    printf("Введите три натуральных числа: ");
+    printf("Введіть три натуральні числа: ");
     scanf("%d %d %d", &t1, &t2, &t3);
     double result = time_to_eat_cake(t1, t2, t3);
-    printf("Гости съедят пирог за %.2f часов\n", result);
+    printf("Гості з'їдять пиріг за %.2f годин\n", result);
 
     return 0;
 }
