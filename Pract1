@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+double time_to_eat_cake(int t1, int t2, int t3) {
+    double P1 = 1.0 / t1;
+    double P2 = 1.0 / t2;
+    double P3 = 1.0 / t3;
+
+    double P_total = P1 + P2 + P3;
+    double T = 1.0 / P_total;
+
+    return T;
+}
+
+int main() {
+    int t1, t2, t3;
+    printf("Введите три натуральных числа: ");
+    scanf("%d %d %d", &t1, &t2, &t3);
+    double result = time_to_eat_cake(t1, t2, t3);
+    printf("Гости съедят пирог за %.2f часов\n", result);
+
+    return 0;
+}
