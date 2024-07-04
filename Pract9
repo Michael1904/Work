@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int minSteps(int x, int y) {
+    int steps = 0;
+
+    while (x != y) {
+        if (y % 2 == 0 && y > x) {
+            y--;
+        } else {
+            y /= 2;
+        }
+        steps++;
+    }
+
+    return steps;
+}
+
+int main() {
+    int x = 45, y = 48;
+    printf("Для x = %d, y = %d, кількість кроків: %d\n", x, y, minSteps(x, y));
+
+    return 0;
+}
