@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+#define MOD 12345
+
+int count_sequences(int n) {
+    if (n == 1) return 2;
+    if (n == 2) return 4;
+    if (n == 3) return 7;
+
+    int a[n + 1], b[n + 1], c[n + 1];
+    a[1] = 1; b[1] = 1; c[1] = 0;
+    a[2] = 2; b[2] = 1; c[2] = 1;
+
+    for (int i = 3; i <= n; i++) {
+        a[i] = (a[i-1] + b[i-1] + c[i-1]) % MOD;
+        b[i] = a[i-1];
+        c[i] = b[i-1];
+    }
+
+    return (a[n] + b[n] + c[n]) % MOD;
+}
+
+int main() {
+    int n;
+    printf("Введіть число n: ");
+    scanf("%d", &n);
+    
+    if (n <= 1 || n >= 10000) {
+        printf("Число повинно бути в діапазоні від 2 до 9999.\n");
+        return 1;
+    }
+    
+    int result = count_sequences(n);
+    printf("Кількість шуканих послідовностей: %d\n", result);
+    
+    return 0;
+}
