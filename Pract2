@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int gcd(int a, int b) {
     while (b != 0) {
         int temp = b;
@@ -7,16 +8,33 @@ int gcd(int a, int b) {
     }
     return a;
 }
+
 int lcm(int a, int b) {
     return (a * b) / gcd(a, b);
 }
+
 int main() {
-    int r = 4;
-    int numbers[] = {6, 8, 15, 20};
+    int r;
+    printf("Введіть кількість чисел: ");
+    scanf("%d", &r);
+    
+    if (r < 2 || r > 20) {
+        printf("Кількість чисел повинна бути в діапазоні від 2 до 20.\n");
+        return 1;
+    }
+    
+    int numbers[r];
+    printf("Введіть числа:\n");
+    for (int i = 0; i < r; i++) {
+        scanf("%d", &numbers[i]);
+    }
+    
+
     int result = numbers[0];
     for (int i = 1; i < r; i++) {
         result = lcm(result, numbers[i]);
     }
-    printf("Найменше загальне кратне: %d\n", result);
+    
+    printf("Найменше спільне кратне: %d\n", result);
     return 0;
 }
